@@ -3,4 +3,15 @@
     <p>
         <%=homeContent%>
     </p>
-    <%- include('partials/footer.ejs') %>
+    <% for( let i=0; i < blogPush.length; i++ ) { %>
+
+        <h3>
+            <%=blogPush[i].title %>
+        </h3>
+        <p>
+            <%= blogPush[i].content %>
+        </p>
+
+        <% } %>
+
+            <%- include('partials/footer.ejs') %>
