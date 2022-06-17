@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const _ = require("lodash");
 
 const app = express();
 const homeStartingContent =
@@ -18,6 +19,18 @@ let blogPosts = [];
 app.get("/", function (req, res) {
   res.render("home", { homeContent: homeStartingContent, blogPush: blogPosts });
 });
+
+// <-------------Params------------>
+
+app.get("/posts/:postName", function (req, res) {
+  const postName = _.lowerCase(req.params.postName);
+
+  blogPosts.forEach(function (element) {
+    if (postName === element.title) {
+      console.log("match found!");
+    }
+  });
+});
 app.get("/about", function (req, res) {
   res.render("about", { aboutContent: aboutStartContent });
 });
@@ -29,6 +42,9 @@ app.get("/contact", function (req, res) {
 app.get("/compose", function (req, res) {
   res.render("compose");
 });
+
+// <--------------------Post----------------------->
+
 app.post("/", function (req, res) {
   const post = {
     title: req.body.composeTitle,
