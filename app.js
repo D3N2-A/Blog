@@ -4,7 +4,7 @@ const _ = require("lodash");
 
 const app = express();
 const homeStartingContent =
-  "Lacus vel facilisis volutpat est velit egestas dui id ornare.";
+  "This page shows all the blog posts in truncated format";
 const aboutStartContent =
   "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. ";
 const contactStartContent =
@@ -25,9 +25,12 @@ app.get("/", function (req, res) {
 app.get("/posts/:postName", function (req, res) {
   const postName = _.lowerCase(req.params.postName);
 
-  blogPosts.forEach(function (element) {
-    if (postName === element.title) {
-      console.log("match found!");
+  blogPosts.forEach(function (el) {
+    if (postName === el.title) {
+      res.render("post", {
+        titlePost: el.title,
+        contentPost: el.content,
+      });
     }
   });
 });

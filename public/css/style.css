@@ -1,4 +1,7 @@
 /* <----------------header-----------------------> */
+html {
+  font-family: "Montserrat", sans-serif;
+}
 .navB {
   background-color: #105652;
 }
