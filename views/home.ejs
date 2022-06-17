@@ -3,7 +3,7 @@
     <p>
         <%=homeContent%>
     </p>
-    <% for( let i=0; i < blogPush.length; i++ ) { %>
+    <!-- <% for( let i=0; i < blogPush.length; i++ ) { %>
 
         <h3>
             <%=blogPush[i].title %>
@@ -12,6 +12,15 @@
             <%= blogPush[i].content %>
         </p>
 
-        <% } %>
+        <% } %> -->
+
+    <% blogPush.forEach(element=> { %>
+        <h3>
+            <%=element.title %>
+        </h3>
+        <p>
+            <%= element.content %>
+        </p>
+        <% }) %>
 
             <%- include('partials/footer.ejs') %>
