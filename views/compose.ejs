@@ -1,7 +1,16 @@
 <%- include('partials/header.ejs') %>
-    <h1>Compose a blog post</h1>
-    <form action="/" method="post">
-        <input type="text" name="composeContent" placeholder="Enter your Text">
-        <button type="submit">Publish</button>
+    <h1 class="m-5">Compose a blog post</h1>
+    <form action="/" method="post" id="compose">
+        <div class="form-group mx-5">
+            <label for="title">Title</label>
+            <input type="text" name="composeTitle" placeholder="Enter Title for post" id="title" class="form-control">
+
+            <label for="content">Post</label>
+
+            <textarea name="composeContent" id="content" rows="3" class="form-control"
+                placeholder="Enter content for post"></textarea>
+            <button type="submit" class="btn btn-primary mt-2 ">Publish</button>
+        </div>
+
     </form>
     <%- include('partials/footer.ejs') %>

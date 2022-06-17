@@ -28,6 +28,12 @@ app.get("/contact", function (req, res) {
 app.get("/compose", function (req, res) {
   res.render("compose");
 });
+app.post("/", function (req, res) {
+  const post = {
+    title: req.body.composeTitle,
+    content: req.body.composeContent,
+  };
+});
 app.listen(process.env.PORT || 3000, function () {
   console.log("Server started at port 3000");
 });
