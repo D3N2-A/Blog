@@ -36,7 +36,7 @@ a:visited {
   color: #635666;
 }
 */
-a:hover {
+.footlink:hover {
   text-decoration: none;
   color: #105652;
 }
@@ -117,7 +117,7 @@ a:active {
 .underline-animation:hover span {
   transform: translate3d(-200%, 0, 0);
 }
-a {
+.footlink {
   text-decoration: none;
   color: black;
   font-weight: 700;

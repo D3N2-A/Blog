@@ -4,23 +4,15 @@
         <p>
             <%=homeContent%>
         </p>
-        <!-- <% for( let i=0; i < blogPush.length; i++ ) { %>
 
-        <h3>
-            <%=blogPush[i].title %>
-        </h3>
-        <p>
-            <%= blogPush[i].content %>
-        </p>
-
-        <% } %> -->
 
         <% blogPush.forEach(element=> { %>
-            <h3>
+            <h1>
                 <%=element.title %>
-            </h3>
+            </h1>
+
             <p>
-                <%= element.content %>
+                <%= element.content.substring(0,100)+"..." %> <a href="/posts/<%=element.title %>">Read More</a>
             </p>
             <% }) %>
     </div>
