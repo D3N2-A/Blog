@@ -26,11 +26,10 @@ html {
 }
 
 /* <-------------footer---------------> */
-/* a:link {
+a:link {
   text-decoration: none;
-  color: #635666;
 }
-
+/*
 a:visited {
   text-decoration: none;
   color: #635666;
