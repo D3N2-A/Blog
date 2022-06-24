@@ -33,16 +33,18 @@ app.get("/", function (req, res) {
 
 app.get("/posts/:postName", function (req, res) {
   const postName = _.lowerCase(req.params.postName);
-  
-  posts.forEach(function (el) {
-    if (postName === el.title) {
-      res.render("post", {
-        titlePost: el.title,
-        contentPost: el.content,
-      });
-    }
+  Post.find({}, (err, posts) => {
+    posts.forEach((el) => {
+      if (postName === el.title) {
+        res.render("post", {
+          titlePost: el.title,
+          contentPost: el.content,
+        });
+      }
+    });
   });
 });
+
 app.get("/about", function (req, res) {
   res.render("about", { aboutContent: aboutStartContent });
 });
