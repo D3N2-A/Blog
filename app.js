@@ -64,8 +64,13 @@ app.post("/", function (req, res) {
     title: req.body.composeTitle,
     content: req.body.composeContent,
   });
-  post.save();
-  res.redirect("/");
+  post.save((err) => {
+    if (!err) {
+      res.redirect("/");
+    } else {
+      console.log(err);
+    }
+  });
 });
 app.listen(process.env.PORT || 3000, function () {
   console.log("Server started at port 3000");
