@@ -2,6 +2,10 @@
 html {
   font-family: "Montserrat", sans-serif;
 }
+body {
+  background-color: whitesmoke;
+}
+
 .navB {
   background-color: #105652;
 }
