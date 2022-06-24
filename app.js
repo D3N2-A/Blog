@@ -9,7 +9,14 @@ const aboutStartContent =
   "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. ";
 const contactStartContent =
   "Scelerisque eleifend donec pretium vulputate sapien. ";
-mongoose.connect("mongodb://localhost:27017/blogDB");
+// mongoose.connect("mongodb://localhost:27017/blogDB");
+mongoose.connect(
+  "mongodb+srv://admin-1:test123@ninja.z7s00i9.mongodb.net/blogDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
